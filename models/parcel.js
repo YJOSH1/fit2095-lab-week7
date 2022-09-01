@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 const sender = require('./sender');
 
-
-
 const parcelSchema = new mongoose.Schema({
     _id: {
         type: mong=oose.Schema.Types.ObjectId,
