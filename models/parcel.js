@@ -6,10 +6,10 @@ const parcelSchema = new mongoose.Schema({
         type: mong=oose.Schema.Types.ObjectId,
         auto: true
     },
-    sender: [{
+    sender: {
         type: mongoose.Schema.ObjectId,
         ref: 'Sender'
-    }],
+    },
     weight: {
         type: Number,
         required: true,
