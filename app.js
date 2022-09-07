@@ -1,8 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
-const actors = require('./routers/parcel');
-const movies = require('./routers/sender');
+const parcel = require('./routers/parcel');
+const sender = require('./routers/sender');
 
 const app = express();
 
@@ -19,6 +19,8 @@ mongoose.connect('mongodb://localhost:27017/poms', function (err) {
 
 });
 
-app.get('/', function (req, res) {
-    res.send("Hi");
-});
+//Endpoints
+//Parcel
+
+//Sender
+app.post('/sender', sender.newSender);
