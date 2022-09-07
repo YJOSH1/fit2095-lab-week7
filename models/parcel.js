@@ -3,7 +3,7 @@ const sender = require('./sender');
 
 const parcelSchema = new mongoose.Schema({
     _id: {
-        type: mong=oose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         auto: true
     },
     sender: {
