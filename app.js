@@ -22,7 +22,8 @@ mongoose.connect('mongodb://localhost:27017/poms', function (err) {
 //Endpoints
 //Parcel
 app.get('/parcel', parcel.getParcelsByAddress);
-app.put('/parcel', parcel.updateParcelAddress);
+app.put('/parcel/address', parcel.updateParcelAddress);
+app.put('/parcel/cost', parcel.updateParcelIncCost);
 app.put('/sender/parcel', parcel.addParcel);
 
 

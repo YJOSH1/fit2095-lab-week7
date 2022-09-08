@@ -33,6 +33,10 @@ const parcelSchema = new mongoose.Schema({
     fragile: {
         type: Boolean,
         required: true
+    },
+    cost: {
+        type: Number,
+        required: true
     }
 });
 

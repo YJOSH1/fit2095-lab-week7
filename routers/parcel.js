@@ -41,4 +41,13 @@ module.exports = {
             res.json(parcel);
         });
     },
+
+    updateParcelIncCost: function (req, res) {
+        Parcel.findByIdAndUpdate(req.body.id, {$inc: {cost: 5}}, function (err, parcel) {
+            if (err) return res.status(400).json(err);
+            if (!parcel) return res.status(404).json();
+    
+            res.json(parcel);
+        });
+    },
 };
