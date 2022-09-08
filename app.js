@@ -25,6 +25,7 @@ app.get('/parcel', parcel.getParcelsByAddress);
 app.put('/parcel/address', parcel.updateParcelAddress);
 app.put('/parcel/cost', parcel.updateParcelIncCost);
 app.put('/sender/parcel', parcel.addParcel);
+app.delete('/parcel', parcel.deleteParcel);
 
 
 //Sender

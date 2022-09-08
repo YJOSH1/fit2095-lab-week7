@@ -50,4 +50,28 @@ module.exports = {
             res.json(parcel);
         });
     },
+
+    deleteParcel: function (req, res) {
+        let type = req.body.type;
+
+        if (type === "weight") {
+            let weight = req.body.weight;
+            Parcel.deleteMany({weight: weight}, function (err) {
+                if (err) return res.status(400).json(err);
+                res.json();
+            })
+        } else if (type === "cost") {
+            let cost = req.body.cost;
+            Parcel.deleteMany({cost: cost}, function (err) {
+                if (err) return res.status(400).json(err);
+                res.json();
+            })
+        } else {
+            let id = req.body.id;
+            Parcel.findOneAndRemove({ _id: id }, function (err) {
+                if (err) return res.status(400).json(err);
+                res.json();
+            });
+        }
+    }
 };
