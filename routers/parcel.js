@@ -25,7 +25,7 @@ module.exports = {
             Sender.findOne({_id: req.body.senderId}, function (err, sender) {
                 if (err) return res.status(400).json(err);
     
-                sender.parcels.push(parcel.id);
+                sender.parcels.push(parcel._id);
                 sender.save();
 
                 res.json(sender);
@@ -43,7 +43,7 @@ module.exports = {
     },
 
     updateParcelIncCost: function (req, res) {
-        Parcel.findByIdAndUpdate(req.body.id, {$inc: {cost: 5}}, function (err, parcel) {
+        Parcel.findByIdAndUpdate(req.body.id, {$inc: {cost: 10}}, function (err, parcel) {
             if (err) return res.status(400).json(err);
             if (!parcel) return res.status(404).json();
     
