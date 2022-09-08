@@ -34,7 +34,7 @@ module.exports = {
     },    
 
     updateParcelAddress: function (req, res) {
-        Parcel.findByIdAndUpdate(req.body.id, {address: req.body.address}, function (err, parcel) {
+        Parcel.findByIdAndUpdate(req.query.id, {address: req.body.address}, function (err, parcel) {
             if (err) return res.status(400).json(err);
             if (!parcel) return res.status(404).json();
     
