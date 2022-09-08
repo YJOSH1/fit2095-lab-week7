@@ -25,7 +25,7 @@ module.exports = {
             Sender.findOne({_id: req.body.senderId}, function (err, sender) {
                 if (err) return res.status(400).json(err);
     
-                sender.parcels.push(parcel._id);
+                sender.parcels.push(parcel.id);
                 sender.save();
 
                 res.json(sender);
